@@ -15,9 +15,14 @@ class App extends Component {
 
   handleNumber(e) {
     const val = e.target.textContent;
-    console.log(val);
     const classOf = e.target.className;
     const { display } = this.state;
+    const getFinalsequence = (display) => {
+      let finalSequence = display.includes(" ")
+        ? display.substr(display.lastIndexOf(" "))
+        : display;
+      return finalSequence;
+    };
 
     if (classOf === "number" && val !== "=" && val !== ".") {
       display === "0"
@@ -26,11 +31,13 @@ class App extends Component {
     } else if (val === "AC") {
       this.setState({ display: "0" });
     } else if (val === ".") {
-      let index = display.lastIndexOf(" ");
-      console.log(index);
-      !display.slice(index).includes(".") &&
-        isNaN(parseInt(display.slice(-1))) === false &&
+      let testForDecimalPoint = getFinalsequence(display);
+      if (
+        display[display.length - 1] !== "." &&
+        !testForDecimalPoint.includes(".")
+      ) {
         this.setState({ display: display.concat(val) });
+      }
     } else if (isNaN(parseInt(display.slice(-1))) === false || val === "=") {
       val !== "="
         ? this.setState({
