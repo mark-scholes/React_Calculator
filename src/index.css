@@ -34,10 +34,10 @@ body {
   margin: auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 20% 80%;
-  padding: 25px;
+  grid-template-rows: 10vh 60vh;
+  grid-gap: 1.5vh;
+  padding: 1vw;
   border: 1px solid black;
-  padding-bottom: 10px;
   background-color: #061114;
   border-radius: 8px;
 }
@@ -47,10 +47,8 @@ body {
   text-align: end;
   background-color: #a3b9aa;
   border-radius: 9px;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  padding: 30px 25px 35px 0px;
-  font-size: 3rem;
+  padding: 1.5vh;
+  font-size: 2.5vw;
   font-family: "Stardos Stencil", cursive;
   overflow: hidden;
 }
@@ -59,19 +57,20 @@ body {
   grid-column: span 10;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 100px 100px 100px 100px;
-  grid-gap: 9px;
+  grid-gap: 1vh;
+  margin-bottom: 2%;
 }
 .number {
   grid-column: span 4;
   background-color: #212b31;
   text-align: center;
   border: 1px solid black;
-  padding: 20px;
-  border-radius: 15px;
+  padding-top: 5vh;
+  border-radius: 12%;
   color: #e8eef2;
-  box-shadow: 0 4px rgba(153, 153, 153, 0.6);
-  font-size: 2.4rem;
+  box-shadow: 0 20px rgba(153, 153, 153, 0.6);
+  font-size: 2.5vw;
+  grid-template-columns: 23% 23% 23% 23%;
 }
 .number:hover {
   background-color: rgba(33, 43, 49, 0.4);
@@ -82,16 +81,22 @@ body {
   transform: translateY(4px);
 }
 
+.functions {
+  grid-column: 11/ -1;
+  grid-row: 2 /-1;
+  text-align: center;
+  display: grid;
+  grid-gap: 0.8vh;
+}
+
 .operator {
   background-color: pink;
-  grid-row: span 10;
-  font-size: x-large;
-  padding: 24px;
+  font-size: 2.7vw;
   border: 1px solid black;
-  border-radius: 10px;
-  margin: 3px;
+  border-radius: 25%;
   background-color: #2e1f39;
   color: #e170df;
+  padding-top: 1.5vh;
   box-shadow: 0 4px rgba(153, 153, 153, 0.6);
 }
 .operator:hover {
@@ -101,12 +106,6 @@ body {
 .operator:active {
   box-shadow: 0 1px rgba(153, 153, 153, 0.7);
   transform: translateY(4px);
-}
-
-.functions {
-  grid-column: 11/ -1;
-  grid-row: 2 / -1;
-  text-align: center;
 }
 
 #Calculator div {
@@ -120,54 +119,103 @@ body {
   background-color: rgba(44, 25, 29, 0.7);
 }
 
-@media only screen and (max-width: 1500px) {
-  .number {
-    font-size: 1.8rem;
-    padding-top: 2.5vh;
+@media only screen and (max-width: 2048px) {
+  #Calculator {
+    width: 65%;
+    padding: 2vw;
   }
-
   .numpad {
-    grid-template-rows: 10vh, 10vh, 10vh, 10vh;
+    grid-gap: 1.9vh;
+  }
+  .number {
+    font-size: 2vw;
   }
 
   .operator {
-    padding: 3.7vh;
-    font-size: 1.2rem;
+    font-size: 2vw;
+    padding-top: 3vh;
+  }
+
+  .display {
+    font-size: 3.5vw;
   }
 }
+
+@media only screen and (max-width: 1440px) {
+  .number {
+    box-shadow: 0 10px rgba(153, 153, 153, 0.6);
+  }
+}
+
 @media only screen and (max-width: 1100px) {
+  #container {
+    width: 85%;
+    left: +47%;
+  }
+
   #Calculator {
-    width: 95%;
+    width: 100%;
+    padding: 35px;
+    padding-right: 40px;
+    border: none;
   }
 
   .operator {
     padding: 3.87vh;
-    font-size: 1.1rem;
+    font-size: 3vw;
+  }
+  .numpad {
+    grid-gap: 1.5vh;
+  }
+
+  .display {
+    font-size: 5.2vw;
   }
 }
 
 @media only screen and (max-width: 800px) {
+  #container {
+    width: 85%;
+    left: +45%;
+  }
+
   #Calculator {
     width: 100%;
-    padding: 15px;
+    padding: 25px;
+    padding-right: 35px;
+  }
+  .number {
+    box-shadow: 0 8px rgba(153, 153, 153, 0.6);
+    font-size: 3.9vw;
   }
 
   .operator {
-    padding: 4.1vh 3vw 4.1vh 3vw;
-    font-size: 0.9rem;
+    font-size: 3vw;
+  }
+  .display {
+    font-size: 6vw;
   }
 }
 
 @media only screen and (max-width: 650px) {
+  #container {
+    width: 85%;
+    margin: 0;
+    transform: none;
+    left: 10px;
+    top: 3px;
+  }
   #Calculator {
-    grid-template-rows: 20% 10% 80%;
-    grid-gap: 1rem;
+    min-width: 270px;
+    grid-template-rows: 20% 10% 70%;
+    grid-gap: 1.5rem;
+    width: 100%;
   }
 
   .display {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding: 25px 20px 10px 10px;
   }
 
@@ -176,23 +224,48 @@ body {
     grid-row: 2/3;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 100px;
-    margin-top: -1.5vh;
+    grid-template-rows: 10vh;
   }
 
   .operator {
-    padding: 0.09vh 2.4vw;
-
-    font-size: 2.6rem;
+    padding: 1vh 1.4vw;
+    font-size: 4.6vw;
+    margin: 3px;
   }
 
   .numpad {
     grid-column: span 12;
     grid-row: auto;
-    padding: 2vh 1vw;
+    padding: 0.5vh 1vw;
+    grid-template-rows: 22% 22% 22% 22%;
   }
 
   .number {
-    font-size: 2.7rem;
+    font-size: 1.7rem;
+    padding-top: 4.5vh;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  html {
+    background: #061114;
+  }
+
+  #container {
+    width: 90%;
+    left: -2%;
+    background-color: #061114;
+  }
+  #Calculator {
+    padding: 25px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+
+  .functions {
+    grid-gap: 0.5vw;
+  }
+  .operator {
+    font-size: 6.5vw;
   }
 }
