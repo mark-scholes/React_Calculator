@@ -48,7 +48,7 @@ body {
   background-color: #a3b9aa;
   border-radius: 9px;
   padding: 1.5vh;
-  font-size: 2.5vw;
+  font-size: 5vh;
   font-family: "Stardos Stencil", cursive;
   overflow: hidden;
 }
@@ -69,7 +69,7 @@ body {
   border-radius: 12%;
   color: #e8eef2;
   box-shadow: 0 20px rgba(153, 153, 153, 0.6);
-  font-size: 2.5vw;
+  font-size: 4vh;
   grid-template-columns: 23% 23% 23% 23%;
 }
 .number:hover {
@@ -91,7 +91,7 @@ body {
 
 .operator {
   background-color: pink;
-  font-size: 2.7vw;
+  font-size: 3.5vh;
   border: 1px solid black;
   border-radius: 25%;
   background-color: #2e1f39;
@@ -127,17 +127,9 @@ body {
   .numpad {
     grid-gap: 1.9vh;
   }
-  .number {
-    font-size: 2vw;
-  }
 
   .operator {
-    font-size: 2vw;
     padding-top: 3vh;
-  }
-
-  .display {
-    font-size: 3.5vw;
   }
 }
 
@@ -160,16 +152,8 @@ body {
     border: none;
   }
 
-  .operator {
-    padding: 3.87vh;
-    font-size: 3vw;
-  }
   .numpad {
     grid-gap: 1.5vh;
-  }
-
-  .display {
-    font-size: 5.2vw;
   }
 }
 
@@ -186,14 +170,6 @@ body {
   }
   .number {
     box-shadow: 0 8px rgba(153, 153, 153, 0.6);
-    font-size: 3.9vw;
-  }
-
-  .operator {
-    font-size: 3vw;
-  }
-  .display {
-    font-size: 6vw;
   }
 }
 
@@ -229,7 +205,6 @@ body {
 
   .operator {
     padding: 1vh 1.4vw;
-    font-size: 4.6vw;
     margin: 3px;
   }
 
@@ -241,7 +216,6 @@ body {
   }
 
   .number {
-    font-size: 1.7rem;
     padding-top: 4.5vh;
   }
 }
@@ -264,8 +238,5 @@ body {
 
   .functions {
     grid-gap: 0.5vw;
-  }
-  .operator {
-    font-size: 6.5vw;
   }
 }
